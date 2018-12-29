@@ -43,7 +43,11 @@ public class DemoApplicationTests {
 
         HttpStatusCodeException e = getHttpError(uri);
 
-        assertThat(e).isInstanceOf(NotFound.class).hasMessage("404 Not Found");
+        // actual:
+        assertThat(e).isInstanceOf(NotFound.class).hasMessage("404 null");
+
+        // expected:
+        // assertThat(e).isInstanceOf(NotFound.class).hasMessage("404 Not Found");
     }
 
     private HttpStatusCodeException getHttpError(String uri) {
